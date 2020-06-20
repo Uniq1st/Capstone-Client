@@ -1,44 +1,24 @@
-import React, {Component} from "react"
+// import React, { Component } from "react";
+// import ReactDOM from "react-dom";
+// const jikanApi = () => (
+//   <div>
+//     <input type='text' id='searchInput' />
+//     <button type='button' id='searchBtn'>Search</button>
+//   </div>
+// );
+
+// ReactDOM.render(<jikanApi />, document.getElementById("app"));
 
 
+// export default jikanApi;
+import React,  { Component } from "react";
+import Navigation from "./Navigation"
 
+function jikanApi(){
+  return(
+    <h1>Hello</h1>
+  )
 
-class jikanApi extends Component{
-  render(){
-    
-    return (
-      <div>
-        {/* Compiled and minified CSS */}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-        <link rel="stylesheet" href="./anime.css" />
-        <nav className="row">
-          <div className="nav-wrapper">
-            <div className="col s12">
-              <a href="#" className="brand-logo">Anime</a>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div className="container">
-          <div className="row">
-            <form id="search_form" className="col s12">
-              <div className="row">
-                <div className="input-field col s6">
-                  <input placeholder=".." name="search" id="search" type="text" className="validate" />
-                  <label htmlFor="search"></label>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div id="search-results" className="container">
-        </div>
-        {/* Compiled and minified JavaScript */}
-        
-      </div>
-      
-    );
-  }
+  
 }
 export default jikanApi;

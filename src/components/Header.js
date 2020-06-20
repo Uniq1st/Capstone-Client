@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navigation from "./Navigation"
 const Header = (props) => {
-	const tabs = ["Signup", "Login", "Database","Search"];
+	const tabs = ["Signup", "Login", "Database","jikanApi"];
 
 	const headerStyling = {
 		backgroundColor: "#AADDAA"

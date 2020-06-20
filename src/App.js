@@ -7,9 +7,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import jikanApi from "./components/jikanApi"
 import "./App.css";
+import API from "./components/API"
 
 
 
+
+ 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -28,6 +31,7 @@ class App extends React.Component {
 			tab: "signUp"
 		};
 	};
+	
 
 	addUser = (username, password) => {
 		let exists = false;
@@ -88,6 +92,7 @@ class App extends React.Component {
 		const login = users.filter((user, index) => {
 			if (user.username === username && user.password === password) {
 				return user;
+	
 			} else {
 				return false;
 			}
@@ -104,6 +109,16 @@ class App extends React.Component {
 			return false;
 		}
 	};
+	searchBar = () => (
+		
+	<div>
+		<input type='text' id='searchInput' />
+		<button type='button' id='searchBtn'>Search</button>
+	</div>
+	)
+
+	  
+	
 
 	render() {
 		const { creation, currentUser, loggedIn, name, users, tab } = this.state;
@@ -121,8 +136,14 @@ class App extends React.Component {
 				{ tab === "Signup" && <Signup handleSubmit={this.addUser} /> }
 				{ tab === "Login" && <Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin} handleLog={this.handleLog} /> }
 				{ tab === "Database" && <Database users={users} handleDelete={this.deleteUser} /> }
-				{ tab === "Search" && <jikanApi/> }
-				{ (tab !== "Signup" && tab !== "Login" && tab !== "Database" && tab!== "Search") && 
+				{ tab === "jikanApi" && <searchBar /> }
+				
+				
+				
+				
+				
+				
+				{ (tab !== "Signup" && tab !== "Login" && tab !== "Database" && tab!== "jikanApi") && 
 					<div>
 						<p style={errorStyling}>Error: tab not recognised</p>
 					</div>
@@ -133,10 +154,12 @@ class App extends React.Component {
 	};
 };
 
+
 ReactDOM.render(
 	<App />,
 	document.getElementById("root")
 );
+
 
 export default App;
 

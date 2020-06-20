@@ -76,7 +76,7 @@ const base_url = "https://api.jikan.moe/v3";
 
 
 
-function JikanApi(event){
+function API(event){
     const base_url = "https://api.jikan.moe/v3";
 
     event.preventDefault();
@@ -133,4 +133,4 @@ const searchResults = document.getElementById('search-results');
         }).join("");
 }
 
-export default JikanApi;
+export default API;
