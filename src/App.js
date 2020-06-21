@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Logins from "./components/Logins";
 import Signup from "./components/Signup";
 import Database from "./components/Database";
@@ -124,28 +125,33 @@ class App extends React.Component {
 			textAlign: "center",
 			fontSize: "1.5em"
 		};
-
+		const SignupComponent = () => (<Signup handleSubmit= {this.addUser}/>);
+		const LoginComponent = () => (
+		<Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin}/>);
+		const DatabaseComponent = () => (<Database users={users} handleDelete={this.deleteUser}/>);
 		return (
 			<div className="app">
-				<Header name={name} handleChange={this.changeTab} />
+				{/* <Header name={name} handleChange={this.changeTab} />
 
 				
 				{ tab === "Signup" && <Signup handleSubmit={this.addUser} /> }
 				{ tab === "Login" && <Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin} handleLog={this.handleLog} /> }
 				{ tab === "Database" && <Database users={users} handleDelete={this.deleteUser} /> }
 				{ tab === "jikanApi" && <jikanAPI /> }
-				
-				
-				
-				
-				
-				
+		
 				{ (tab !== "Signup" && tab !== "Login" && tab !== "Database" && tab!== "jikanApi") && 
 					<div>
 						<p style={errorStyling}>Error: tab not recognised</p>
 					</div>
 				}
-				<Footer creation={creation} />
+				<Footer creation={creation} /> */}
+				<Router>
+					<Switch>
+						<Route exact path="/signup" render={SignupComponent}/>
+						<Route exact path="/login" render={LoginComponent}/>
+						<Route exact path="/database" render={DatabaseComponent}/>
+					</Switch>
+				</Router>
 			</div>
 		);
 	};
