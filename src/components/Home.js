@@ -27,9 +27,13 @@ class Home extends Component{
        else{
             animeList=(
                <div>
-                   <ul>
-                    {this.state.topAnimes.map((anime) => <li key= {anime.rank}> {anime.title} </li>)}
-                   </ul>
+                   <ol>
+                    {this.state.topAnimes.map((anime) => 
+                        <li key= {anime.rank}> 
+                        {anime.title} 
+                        <img src={anime.image_url} alt={anime.title}/>
+                         </li>)}
+                   </ol>
                </div>
             )
        }
