@@ -10,9 +10,6 @@ import "./App.css";
 import API from "./components/API"
 
 
-
-
- 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -136,7 +133,7 @@ class App extends React.Component {
 				{ tab === "Signup" && <Signup handleSubmit={this.addUser} /> }
 				{ tab === "Login" && <Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin} handleLog={this.handleLog} /> }
 				{ tab === "Database" && <Database users={users} handleDelete={this.deleteUser} /> }
-				{ tab === "jikanApi" && <searchBar /> }
+				{ tab === "jikanApi" && <jikanAPI /> }
 				
 				
 				
