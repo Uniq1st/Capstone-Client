@@ -6,7 +6,8 @@ import Signup from "./components/Signup";
 import Database from "./components/Database";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import jikanApi from "./components/jikanApi"
+import jikanApi from "./components/jikanApi";
+import Home from "./components/Home";
 import "./App.css";
 import API from "./components/API"
 
@@ -129,6 +130,7 @@ class App extends React.Component {
 		const LoginComponent = () => (
 		<Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin}/>);
 		const DatabaseComponent = () => (<Database users={users} handleDelete={this.deleteUser}/>);
+		const HomeComponent = () => (<Home/>);
 		return (
 			<div className="app">
 				{/* <Header name={name} handleChange={this.changeTab} />
@@ -150,6 +152,7 @@ class App extends React.Component {
 						<Route exact path="/signup" render={SignupComponent}/>
 						<Route exact path="/login" render={LoginComponent}/>
 						<Route exact path="/database" render={DatabaseComponent}/>
+						<Route exact path="/home" render={HomeComponent}/>
 					</Switch>
 				</Router>
 			</div>
