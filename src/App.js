@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import jikanApi from "./components/jikanApi";
 import Home from "./components/Home";
 import Upcoming from "./components/Upcoming";
+import Search from "./components/Search";
 import "./App.css";
 import API from "./components/API"
 
@@ -133,6 +134,7 @@ class App extends React.Component {
 		const DatabaseComponent = () => (<Database users={users} handleDelete={this.deleteUser}/>);
 		const HomeComponent = () => (<Home/>);
 		const UpcomingComponent = () => (<Upcoming/>);
+		const SearchComponent = () =>(<Search/>);
 		return (
 			<div className="app">
 				{/* <Header name={name} handleChange={this.changeTab} />
@@ -156,6 +158,7 @@ class App extends React.Component {
 						<Route exact path="/database" render={DatabaseComponent}/>
 						<Route exact path="/" render={HomeComponent}/>
 						<Route exact path="/upcoming" render={UpcomingComponent}/>
+						<Route exact path="/search" render={SearchComponent}/>
 					</Switch>
 				</Router>
 			</div>
