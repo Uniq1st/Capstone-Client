@@ -38,9 +38,10 @@ class Search extends Component{
                 <div>
                     <ol>
                      {this.state.topAnimes.map((anime) => 
-                         <li key= {anime.rank}> 
-                         {anime.title} 
-                         <img src={anime.image_url} alt={anime.title}/>
+                        <li key= {anime.rank}> 
+                        <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
+                        {anime.title} 
+                        <h2> Rating:{anime.score} </h2>
                           </li>)}
                     </ol>
                 </div>

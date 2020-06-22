@@ -30,8 +30,9 @@ class Upcoming extends Component{
                    <ol>
                     {this.state.upcomingAnimes.map((anime) => 
                         <li key= {anime.rank}> 
+                        <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
-                        <img src={anime.image_url} alt={anime.title}/>
+                        <h3> Start Date:{anime.start_date} </h3>
                          </li>)}
                    </ol>
                </div>
