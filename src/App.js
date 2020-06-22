@@ -4,14 +4,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Logins from "./components/Logins";
 import Signup from "./components/Signup";
 import Database from "./components/Database";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import jikanApi from "./components/jikanApi";
+
 import Home from "./components/Home";
 import Upcoming from "./components/Upcoming";
 import Search from "./components/Search";
+import Genre from "./components/Genre";
 import "./App.css";
-import API from "./components/API"
+
+// import API from "./components/API"
+// import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import jikanApi from "./components/jikanApi";
 
 
 class App extends React.Component {
@@ -134,7 +137,8 @@ class App extends React.Component {
 		const DatabaseComponent = () => (<Database users={users} handleDelete={this.deleteUser}/>);
 		const HomeComponent = () => (<Home/>);
 		const UpcomingComponent = () => (<Upcoming/>);
-		const SearchComponent = () =>(<Search/>);
+		const SearchComponent = () => (<Search/>);
+		const GenreComponent = () => (<Genre/>);
 		return (
 			<div className="app">
 				{/* <Header name={name} handleChange={this.changeTab} />
@@ -159,6 +163,7 @@ class App extends React.Component {
 						<Route exact path="/" render={HomeComponent}/>
 						<Route exact path="/upcoming" render={UpcomingComponent}/>
 						<Route exact path="/search" render={SearchComponent}/>
+						<Route exact path="/genre" render={GenreComponent}/>
 					</Switch>
 				</Router>
 			</div>
