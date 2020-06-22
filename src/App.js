@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logins from "./components/Logins";
 import Signup from "./components/Signup";
 import Database from "./components/Database";
@@ -155,15 +155,23 @@ class App extends React.Component {
 					</div>
 				}
 				<Footer creation={creation} /> */}
+
 				<Router>
+					<nav>
+						<Link to="/">Home</Link>
+						<Link to="/upcoming">Upcoming Anime</Link>
+						<Link to="/genre">Anime Genres</Link>
+						<Link to="/search">Search</Link>
+						<Link to="/signup"> Sign Up for Account</Link>
+						<Link to="/login"> Login to Account</Link>
+					</nav>
 					<Switch>
-						<Route exact path="/signup" render={SignupComponent}/>
-						<Route exact path="/login" render={LoginComponent}/>
-						<Route exact path="/database" render={DatabaseComponent}/>
-						<Route exact path="/" render={HomeComponent}/>
-						<Route exact path="/upcoming" render={UpcomingComponent}/>
-						<Route exact path="/search" render={SearchComponent}/>
-						<Route exact path="/genre" render={GenreComponent}/>
+						<Route exact path="/signup" render={SignupComponent} />
+						<Route exact path="/login" render={LoginComponent} />
+						<Route exact path="/" render={HomeComponent} />
+						<Route exact path="/upcoming" render={UpcomingComponent} />
+						<Route exact path="/search" render={SearchComponent} />
+						<Route exact path="/genre" render={GenreComponent} />
 					</Switch>
 				</Router>
 			</div>
