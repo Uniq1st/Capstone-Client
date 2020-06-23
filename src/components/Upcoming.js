@@ -1,5 +1,6 @@
 import React,  { Component } from "react";
 import axios from 'axios';
+import "./App.css";
 
 class Upcoming extends Component{
     constructor(props){
@@ -29,7 +30,7 @@ class Upcoming extends Component{
                <div>
                    <ol>
                     {this.state.upcomingAnimes.map((anime) => 
-                        <li className="poop"key= {anime.rank}> 
+                        <li className="poop" key= {anime.rank}> 
                         <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
                         <h3> Start Date:{anime.start_date} </h3>

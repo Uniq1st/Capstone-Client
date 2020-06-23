@@ -34,11 +34,11 @@ class Genre extends Component{
        }
        else{
             animeList=(
-               <div >
+               <div>
                    <ol>
                     {this.state.topAnimes.map((anime) => 
                         <li className="poop" key= {anime.rank}> 
-                        <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
+                        <a href ={`/anime/${anime.mal_id}`}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
                         <h2> Rating:{anime.score} </h2>
                          </li>)}
@@ -49,7 +49,7 @@ class Genre extends Component{
 
        return(
            <>
-           <h1>Search By Genre </h1>
+           Search by Genre
         <select className="work"
           onChange={this.handleGenreChange}
         >

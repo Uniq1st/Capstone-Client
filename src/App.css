@@ -239,7 +239,192 @@ Explore
     transform: rotate(360deg);
   }
 }
+.link{
+  
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid gray;
+    margin-right: 5px;
+    background: gray;
+    color: lightgray;
+    cursor: pointer;
+    background: #FFF;
+    background-repeat: no-repeat;
+    color: #000;
+    padding: 20px;
+    border: 1px solid gray;
+    max-width: 800px;
+    font-size: 20;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 20px;
+    width: 180px;
+bottom: 20px;
+}
+.linked{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("minAnime.png");
+  box-sizing: 1800;
+  background-repeat: no-repeat;
+  width: 220px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
 
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.upcoming{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("upcoming.png");
+ 
+  background-repeat: no-repeat;
+  width: 220px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
+
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  
+.genre{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("Genres.png");
+  box-sizing: 1800;
+  background-repeat: no-repeat;
+  width: 130px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
+
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  
+.search{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("search.png");
+  box-sizing: 1800;
+  background-repeat: no-repeat;
+  width: 120px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
+
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.signup{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("signup.png");
+  box-sizing: 1800;
+  background-repeat: no-repeat;
+  width: 150px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
+
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.login{
+  
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+  border: 1px solid gray;
+  margin-right: 1px;
+  background:white;
+  color: lightgray;
+  cursor: pointer;
+  background-image:url("login.png");
+  box-sizing: 1800;
+  background-repeat: no-repeat;
+  width: 140px;
+  
+  color: #000;
+  padding: 30px;
+  border: 1px solid gray;
+
+  
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  
   
   
 

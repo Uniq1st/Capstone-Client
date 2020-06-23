@@ -1,8 +1,7 @@
 import React,  { Component } from "react";
 import axios from 'axios';
 import Searchbar from './Searchbar'
-import "./App.css";
-
+import "./App.css"
 
 class Search extends Component{
     constructor(props){
@@ -12,7 +11,6 @@ class Search extends Component{
             searchInput: "",
         };
     };
-    
 
     handleInput = (event) => {
         this.setState({searchInput: event.target.value});
@@ -34,31 +32,19 @@ class Search extends Component{
             console.log(err);
           });
     }
-    
 
     render(){
-        const legendStyling = {
-            textAlign: "center"
-            
-            
-		};
         let animeList;
              animeList=(
-                <div
-                className=".card"
-                     style={{ width: 108.5 + "rem" 
-                     }}>
-                    <li>
+                <div>
+                    <ol>
                      {this.state.topAnimes.map((anime) => 
-                     
                         <li className="poop" key= {anime.rank}> 
-                        
-                        <a href ={anime.url}><img src={anime.image_url} 
-                        alt={anime.title}/></a>
+                        <a href ={`/anime/${anime.mal_id}`}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
                         <h2> Rating:{anime.score} </h2>
                           </li>)}
-                    </li>
+                    </ol>
                 </div>
              )
  
