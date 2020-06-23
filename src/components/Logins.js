@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
-import Database from "./Database"
+
 
 
 class Logins extends React.Component {

@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logins from "./components/Logins";
 import Signup from "./components/Signup";
-import Database from "./components/Database";
-
 import Home from "./components/Home";
 import Upcoming from "./components/Upcoming";
 import Search from "./components/Search";
 import Genre from "./components/Genre";
+import Anime from "./components/Anime";
 import "./App.css";
 
 // import API from "./components/API"
@@ -134,27 +133,14 @@ class App extends React.Component {
 		const SignupComponent = () => (<Signup handleSubmit= {this.addUser}/>);
 		const LoginComponent = () => (
 		<Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin}/>);
-		const DatabaseComponent = () => (<Database users={users} handleDelete={this.deleteUser}/>);
 		const HomeComponent = () => (<Home/>);
 		const UpcomingComponent = () => (<Upcoming/>);
 		const SearchComponent = () => (<Search/>);
 		const GenreComponent = () => (<Genre/>);
+		const AnimeComponent = () => (<Anime/>);
 		return (
 			<div className="app">
-				{/* <Header name={name} handleChange={this.changeTab} />
-
 				
-				{ tab === "Signup" && <Signup handleSubmit={this.addUser} /> }
-				{ tab === "Login" && <Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin} handleLog={this.handleLog} /> }
-				{ tab === "Database" && <Database users={users} handleDelete={this.deleteUser} /> }
-				{ tab === "jikanApi" && <jikanAPI /> }
-		
-				{ (tab !== "Signup" && tab !== "Login" && tab !== "Database" && tab!== "jikanApi") && 
-					<div>
-						<p style={errorStyling}>Error: tab not recognised</p>
-					</div>
-				}
-				<Footer creation={creation} /> */}
 
 				<Router>
 					<nav>
@@ -172,6 +158,7 @@ class App extends React.Component {
 						<Route exact path="/upcoming" render={UpcomingComponent} />
 						<Route exact path="/search" render={SearchComponent} />
 						<Route exact path="/genre" render={GenreComponent} />
+						<Route exact path="/anime/:id" render={AnimeComponent} />
 					</Switch>
 				</Router>
 			</div>

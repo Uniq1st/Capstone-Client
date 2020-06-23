@@ -11,8 +11,8 @@
 
 
 // export default jikanApi;
-import React,  { Component } from "react";
-import Navigation from "./Navigation"
+import React from "react";
+
 
 function jikanApi(){
   return(

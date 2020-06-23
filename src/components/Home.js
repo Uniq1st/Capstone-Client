@@ -1,6 +1,7 @@
 import React,  { Component } from "react";
 import axios from 'axios';
 
+
 class Home extends Component{
     constructor(props){
         super(props);
@@ -30,7 +31,7 @@ class Home extends Component{
                    <ol>
                     {this.state.topAnimes.map((anime) => 
                         <li key= {anime.rank}> 
-                        <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
+                        <a href ={`/anime/${anime.mal_id}`}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
                         <h2> Rating:{anime.score} </h2>
                          </li>)}
