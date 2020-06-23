@@ -1,11 +1,13 @@
 import React,  { Component } from "react";
-import Navigation from "./Navigation"
+import { Redirect } from "react-router-dom";
+
 class Signup extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			redirect: false,
 		};
 	};
 
@@ -31,7 +33,8 @@ class Signup extends React.Component {
 
 			this.setState({
 				username: "",
-				password: ""
+				password: "",
+				redirect: true,
 			});
 		}
 	};
@@ -74,6 +77,12 @@ class Signup extends React.Component {
 			width: "200px",
 			backgroundColor: "#EEFFEE",
 		};
+
+		if(this.state.redirect) {
+			return (
+				<Redirect to="/login"/>
+			)
+		}
 
 		return (
 			<form onSubmit={this.handleSubmit} style={formStyling}>
