@@ -38,7 +38,7 @@ class Genre extends Component{
                    <ol>
                     {this.state.topAnimes.map((anime) => 
                         <li className="poop" key= {anime.rank}> 
-                        <a href ={anime.url}><img className="image"src={anime.image_url} alt={anime.title}/></a>
+                        <a href ={anime.url}><img src={anime.image_url} alt={anime.title}/></a>
                         {anime.title} 
                         <h2> Rating:{anime.score} </h2>
                          </li>)}
@@ -62,7 +62,7 @@ class Genre extends Component{
           <option value="14">Horror</option>
           <option value="26">Romance</option>
         </select>
-        <button onClick={this.handleClick}>Change Genre</button>
+        <button className="button" onClick={this.handleClick}>Change Genre</button>
            {animeList}
            </>
        )
