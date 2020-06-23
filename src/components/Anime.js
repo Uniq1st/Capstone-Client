@@ -39,6 +39,8 @@ class Anime extends Component{
             <iframe title="trailer"
             width="420" height="345" src={this.state.aniInfo.trailer_url}>
             </iframe>
+            <br></br>
+            <a href={this.state.aniInfo.url}>To MAL</a>
             </>
         )
     }
