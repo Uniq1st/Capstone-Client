@@ -1,15 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logins from "./components/Logins";
 import Signup from "./components/Signup";
-import Database from "./components/Database";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import jikanApi from "./components/jikanApi"
+import Home from "./components/Home";
+import Upcoming from "./components/Upcoming";
+import Search from "./components/Search";
+import Genre from "./components/Genre";
+import Anime from "./components/Anime";
 import "./App.css";
-import API from "./components/API"
 
+// import API from "./components/API"
+// import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import jikanApi from "./components/jikanApi";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b4faa496bc79f51f6e964d7fd37b46dbfeb4524
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -124,9 +133,17 @@ class App extends React.Component {
 			textAlign: "center",
 			fontSize: "1.5em"
 		};
-
+		const SignupComponent = () => (<Signup handleSubmit= {this.addUser}/>);
+		const LoginComponent = () => (
+		<Logins loggedIn={loggedIn} currentUser={currentUser} handleSubmit={this.handleLogin}/>);
+		const HomeComponent = () => (<Home/>);
+		const UpcomingComponent = () => (<Upcoming/>);
+		const SearchComponent = () => (<Search/>);
+		const GenreComponent = () => (<Genre/>);
+		const AnimeComponent = () => (<Anime/>);
 		return (
 			<div className="app">
+<<<<<<< HEAD
 				<Header name={name} handleChange={this.changeTab} />
 
 				
@@ -135,17 +152,31 @@ class App extends React.Component {
 				{ tab === "Database" && <Database users={users} handleDelete={this.deleteUser} /> }
 				{ tab === "jikanApi" && <jikanAPI /> }
 				
+=======
+>>>>>>> 6b4faa496bc79f51f6e964d7fd37b46dbfeb4524
 				
-				
-				
-				
-				
-				{ (tab !== "Signup" && tab !== "Login" && tab !== "Database" && tab!== "jikanApi") && 
-					<div>
-						<p style={errorStyling}>Error: tab not recognised</p>
-					</div>
-				}
-				<Footer creation={creation} />
+
+				<Router>
+					<nav>
+						
+						<Link className="linked" to="/"></Link>
+						<Link className="upcoming"to="/upcoming"></Link>
+						<Link className="genre" to="/genre"></Link>
+						<Link className="search" to="/search"></Link>
+						<Link className="signup" to="/signup"> </Link>
+						<Link className="login" to="/login"> </Link>
+						
+					</nav>
+					<Switch>
+						<Route exact path="/signup" render={SignupComponent} />
+						<Route exact path="/login" render={LoginComponent} />
+						<Route exact path="/" render={HomeComponent} />
+						<Route exact path="/upcoming" render={UpcomingComponent} />
+						<Route exact path="/search" render={SearchComponent} />
+						<Route exact path="/genre" render={GenreComponent} />
+						<Route exact path="/anime/:id" render={AnimeComponent} />
+					</Switch>
+				</Router>
 			</div>
 		);
 	};

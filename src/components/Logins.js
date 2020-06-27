@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Navigation from "./Navigation"
-import Database from "./Database"
+import React from "react";
+import { Redirect } from "react-router-dom";
+
 
 
 class Logins extends React.Component {
@@ -8,7 +8,8 @@ class Logins extends React.Component {
 		super(props);
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			redirect: false,
 		};
 	};
 
@@ -37,6 +38,10 @@ class Logins extends React.Component {
 			});
 		}
 	};
+
+	handleLog = () => {
+		this.setState({redirect: true});
+	}
 
 	render() {
 		const { username, password } = this.state;
@@ -78,6 +83,12 @@ class Logins extends React.Component {
 			backgroundColor: "#AAAAFF",
 		};
 
+		if(this.state.redirect) {
+			return (
+				<Redirect to="/"/>
+			)
+		}
+
 		if (!loggedIn) {
 			return (
 				<form style={formStyling} onSubmit={this.handleSubmit}>
@@ -111,7 +122,7 @@ class Logins extends React.Component {
 						<p>Your username is: { username }</p>
 						<p>Your password is: { password }</p>
 					</div>
-					<button style={submitStyling} onClick={this.props.handleLog}>Logout</button>
+					<button style={submitStyling} onClick={this.handleLog}>Logout</button>
 				</div>
 			);
 		}
